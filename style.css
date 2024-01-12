@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}body{
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app{
+    /* position: absolute;
+    top: 40%;
+    left:17%;
+    transform: translate(-50px,-50px); */
+    width: 85vw;
+    height: 80vh;
+    display: flex;
+    overflow: hidden;
+    border-radius: 5rem;
+    padding: 1rem 4rem;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+}
+div.time-select{
+    padding: 50px;
+    flex-grow: 1;
+    /* background-color: aqua; */
+    height: 80%;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}div.time-select button{
+    padding: 20px;
+    
+    background-color: rgba(62,66,66,0.0);
+    border: 2px solid wheat;
+    color:black;
+    text-shadow: rgba(33, 34, 34, 0.4) 0px 10px 45px;
+}
+.player-container{
+    height: 80%;
+    width: 59px;
+    flex-grow: 4;
+    /* background-color: blue; */
+}
+.sound-picker{
+    display: flex;
+    height: 80%;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: space-evenly;
+    /* align-items: start; */
+    align-items: center;
+    /* background-color: red; */
+   
+}
+.sound-picker button{
+    background-color: rgba(62,66,66,0.0);
+    /* padding: 6px 10px; */
+    padding: 4px;
+    border-radius: 50%;
+    width :90px;
+    height: 90px;
+    /* width: 59%;
+    height: 54%; */
+    
+    
+    
+}
+button img{
+    /* background-color: ; */
+    width: 44px;
+    height: 44px;
+    
+    border-radius: 50%;
+}
