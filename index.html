@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- roboto font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <!-- sytle sheet link -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <video autoplay muted loop id="myVideo">
+        <source src="./video/rain.mp4" type="video/mp4" id="vidsource">
+      </video>
     <div class="app">
         <div class="time-select">
             <button class="2min">2 Minutes</button>
@@ -16,7 +28,9 @@
         <div class="player-container">
             <div class="skill">
                 <div class="outer">
-                    <div class="inner"></div>
+                    <div class="inner">
+                        <p id="time" >10:00</p>
+                    </div>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="300px" height="300px">
                     <defs>
@@ -28,15 +42,25 @@
                     <circle cx="150" cy="150" r="140" stroke-linecap="round" />
                 </svg>
             </div>
-
+            <div class="down_label">
+                <button id="add">
+                    <img src="./svg/bx-plus.svg" alt="">
+                </button>
+                <button class="play-pause">
+                    <img src="./svg/play.svg" alt="" id="pl-pa">
+                </button>
+                <button class="reverse">
+                    <img src="./svg/revision.svg" alt="">
+                </button>
+            </div>
 
             
         </div>
         <div class="sound-picker">
-            <button data-sound="./sounds/rain.mp3" data-video="./video/rain.mp4">
+            <button data-sound="./sounds/rain.mp3" data-video="./video/rain.mp4" data-color="#e3edf7" onclick="videoChange(event)" style="background-color: cornflowerblue;">
                 <img src="./svg/rain.svg" alt="">
             </button>
-            <button data-sound="./sounds/beach.mp3" data-video="./video/rain.mp4">
+            <button data-sound="./sounds/beach.mp3" data-video="./video/beach.mp4" data-color="#f7dfc4" onclick="videoChange(event)" style="background-color: crimson;">
                 <img src="./svg/beach.svg" alt="">
             </button>
         </div>
