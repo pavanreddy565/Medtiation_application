@@ -2,7 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}body{
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -5;
+  }
+body{
     display: flex;
     margin: 0;
     height: 100vh;
@@ -24,9 +33,9 @@
     align-items: center;
     background-color: #e3edf7;
     /* justify-content: space-evenly; */
-    -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
+    /* -webkit-box-shadow:0px 0px 105px 45px rgba(45,255,196,0.9);
     -moz-box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
-    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9);
+    box-shadow: 0px 0px 105px 45px rgba(45,255,196,0.9); */
 }
 div.time-select{
     padding: 50px;
@@ -42,11 +51,14 @@ div.time-select{
     
 }div.time-select button{
     padding: 20px;
-    
+    font-family: 'Poppins', sans-serif;
     background-color: rgba(62,66,66,0.0);
-    border: 2px solid wheat;
+    border: 2px solid rgb(233, 199, 137);
     color:black;
-    text-shadow: rgba(33, 34, 34, 0.4) 0px 10px 45px;
+    border-radius: .9rem;
+    font-weight: 500;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
 }
 .player-container{
     height: 80%;
@@ -54,6 +66,9 @@ div.time-select{
     flex-grow: 4;
     display: flex;
     box-sizing: border-box;
+    flex-direction: column;
+    gap: 12rem;
+    /* justify-content: center; */
     
     
 }.skill{
@@ -79,18 +94,28 @@ div.time-select{
     height: 260px;
     width: 260px;
     border-radius: 50%;
+    
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
     box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
                 inset -4px -4px 6px -1px rgba(255,255,255,0.7),
                 -0.5px -0.5px 0px rgba(255,255,255,1),
                 0.5px 0.5px 0px rgba(0,0,0,0.15),
                 0px 12px 10px -10px rgba(0,0,0,0.05);
 
+}#time{
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+    
+
 }
 circle{
     fill: none;
     stroke:url(#GradientColor);
     stroke-width: 20px;
-    stroke-dasharray: 472;
+    stroke-dasharray: 875;
     stroke-dashoffset: 00;
 
 }
@@ -112,12 +137,15 @@ div.skill svg{
    
 }
 .sound-picker button{
-    background-color: rgba(62,66,66,0.0);
+    background-color: aqua;
     /* padding: 6px 10px; */
     padding: 4px;
     border-radius: 50%;
     width :90px;
     height: 90px;
+    border:0 solid black;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
     /* width: 59%;
     height: 54%; */
     
@@ -130,4 +158,28 @@ button img{
     height: 44px;
     
     border-radius: 50%;
+}
+.down_label{
+    display: flex;
+    width: 350px;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    margin-left: 72px;
+    justify-content: space-evenly;
+    /* background-color: blueviolet; */
+}
+.down_label button{
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    border: 2px solid rgb(233, 199, 137);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                -6px -6px 10px -1px rgba(255,255,255,0.7);
+}
+.down_label button img{
+    width: 30px;
+    height: 30px;
 }
