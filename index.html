@@ -21,9 +21,9 @@
       </video>
     <div class="app">
         <div class="time-select">
-            <button class="2min">2 Minutes</button>
-            <button class="5min">5 Minutes</button>
-            <button class="10min">10 Minutes</button>
+            <button class="2min" onclick="timeSetter(event)">2 Minutes</button>
+            <button class="5min" onclick="timeSetter(event)">5 Minutes</button>
+            <button class="10min" onclick="timeSetter(event)">10 Minutes</button>
         </div>
         <div class="player-container">
             <div class="skill">
@@ -46,7 +46,7 @@
                 <button id="add">
                     <img src="./svg/bx-plus.svg" alt="">
                 </button>
-                <button class="play-pause">
+                <button class="play-pause" onclick="Timer()">
                     <img src="./svg/play.svg" alt="" id="pl-pa">
                 </button>
                 <button class="reverse">

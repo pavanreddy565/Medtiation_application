@@ -108,7 +108,7 @@ div.time-select{
 }#time{
     font-size: 4rem;
     font-family: 'Poppins', sans-serif;
-    
+    transition: all 1s ease-in-out;
 
 }
 circle{
@@ -116,7 +116,7 @@ circle{
     stroke:url(#GradientColor);
     stroke-width: 20px;
     stroke-dasharray: 875;
-    stroke-dashoffset: 00;
+    stroke-dashoffset: 0;
 
 }
 div.skill svg{
