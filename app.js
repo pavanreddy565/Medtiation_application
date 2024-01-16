@@ -3,6 +3,9 @@ const app=()=>{
 };
 app();
 var current=600-1;
+var timeLeft,time_int;
+var value=1;
+let nu,nui;
 const main_ele=document.querySelector('.app')
 function videoChange(event) {
     var button = event.target.closest('button');
@@ -30,15 +33,25 @@ function no_of_digits(n){
     }return num;
   }
   function Timer() {
-    let nu = 0;
+    nu = 0;
+    
+    
     let increment = 875 / (current);
-    var timeLeft = setInterval(() => {
-        if (current == 0||current==current+1) {
-            clearInterval(timeLeft);
-        }
+    buttonChange();
+    timeLeft = setInterval(() => {
         minutesLeft(current, nu);
         nu += increment;
+        nui=nu;
         current--;
+        console.log(current);
+        if (current == 0||current==time_int*60-1||current==599||value==0) {
+            clearInterval(timeLeft);
+            if(value){
+                document.querySelector('circle').style.strokeDashoffset = 0;
+            }
+            
+            return;
+        }
     }, 1000);
   }
     function minutesLeft(sec, dashoffset) {
@@ -55,9 +68,10 @@ function no_of_digits(n){
     };
     function timeSetter(event){
         let time_s=event.target;
+        
         let [time_str,b]=time_s.textContent.split(" ");
         //console.log(time_str);
-        let time_int = parseInt(time_str,10);
+        time_int = parseInt(time_str,10);
         //console.log(time_int);
         if(no_of_digits(time_int) == 1){
             document.getElementById("time").innerHTML ='0'+time_int+":00";
@@ -65,9 +79,40 @@ function no_of_digits(n){
             document.getElementById("time").innerHTML =time_int+":00";
         }current=time_int*60-1;
         document.querySelector('circle').style.strokeDashoffset = 0;
-        //clearInterval(timeLeft);
+        revert();
 
 
+    }
+    function revert(){
+        if(time_int){
+            current=time_int*60;
+        }else{
+            current=10*60;
+        }
+        if(value){
+            console.log(value);
+            buttonChange();
+        }
+        
+    }
+    function buttonChange(){
+        var play_pause=document.querySelector('.play-pause');
+        var funi=play_pause.dataset.fun
+        if(parseInt(funi)){
+            play_pause.src="./svg/play.svg";
+            play_pause.onclick=Timer;
+            play_pause.dataset.fun=0;
+            value=0;
+        }else{
+            play_pause.src="./svg/pause.svg";
+            play_pause.onclick=Pause;
+            play_pause.dataset.fun=1;
+            value=1;
+        }
+    }
+    function Pause(){
+        //value=0;
+        buttonChange();
     }
 
     //Timer(600);
